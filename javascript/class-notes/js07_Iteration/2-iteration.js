@@ -12,7 +12,7 @@ const fiyatlar = [100, 250, 50, 89];
 fiyatlar.forEach(yazdir);
 
 function yazdir(v) {
-    console.log(v);
+  console.log(v);
 }
 
 console.log('***************************');
@@ -34,9 +34,9 @@ console.log(fiyatlar.forEach((fiyat) => (toplam += fiyat))); //!undefined
 let toplam1 = 0;
 
 fiyatlar.forEach((deger, indis, dizi) => {
-    toplam1 += deger;
-    console.log(`${indis}.iterasyon toplami:${toplam1}`);
-    dizi[indis] = deger + 10;
+  toplam1 += deger;
+  console.log(`${indis}.iterasyon toplami:${toplam1}`);
+  dizi[indis] = deger + 10;
 });
 console.log(fiyatlar);
 
@@ -52,13 +52,13 @@ console.log(fiyatlar);
 //* yeni bir diziye saklayalım.
 
 const isimler = [
-    'Ahmet',
-    'mehmet',
-    'ismet',
-    'SAFFET',
-    'Can',
-    'Canan',
-    'Cavidan',
+  'Ahmet',
+  'mehmet',
+  'ismet',
+  'SAFFET',
+  'Can',
+  'Canan',
+  'Cavidan',
 ];
 
 console.log(isimler);
@@ -71,8 +71,8 @@ console.log(kucukIsimler);
 //*-------------- ÖRNEK -------------------
 
 const buyukIsimler = isimler.map((isim, i, dizi) => {
-    dizi[i] = isim.toLocaleLowerCase(); //! Orjinal diziyi değiştirdik.
-    return isim.toLocaleUpperCase();
+  dizi[i] = isim.toLocaleLowerCase(); //! Orjinal diziyi değiştirdik.
+  return isim.toLocaleUpperCase();
 });
 
 console.log(buyukIsimler);
@@ -82,8 +82,8 @@ console.log(buyukIsimler);
 //* ======================================================
 //! Tüm isimleri büyük harfe çevirip konsolda yazdiriniz.
 isimler
-    .map((isim) => isim.toLocaleUpperCase())
-    .forEach((name) => console.log(name));
+  .map((isim) => isim.toLocaleUpperCase())
+  .forEach((name) => console.log(name));
 
 // console.log(
 //   isimler
@@ -100,9 +100,9 @@ isimler
 
 //! Ahmet olanları seçip büyük harfe çevirip konsolda yazdiriniz.
 isimler
-    .filter((x) => x === 'ahmet')
-    .map((x) => x.toLocaleUpperCase())
-    .forEach((x) => console.log(x));
+  .filter((x) => x === 'ahmet')
+  .map((x) => x.toLocaleUpperCase())
+  .forEach((x) => console.log(x));
 
 //* fiyatlar array'inde fiyatı 250 TL den az olanlari ayri bir diziye saklayalim.
 

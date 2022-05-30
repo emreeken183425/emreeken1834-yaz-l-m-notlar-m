@@ -33,10 +33,10 @@ console.log(araclar['model']); //? square bracket notasyonu => 2022
 
 //* Object constructor
 function Personel(id, ad, maas) {
-    this.perId = id;
-    this.perAdi = ad;
-    this.perMaas = maas;
-    console.log(this); //! Personel objesine bağlanmıştır (binded)
+  this.perId = id;
+  this.perAdi = ad;
+  this.perMaas = maas;
+  console.log(this); //! Personel objesine bağlanmıştır (binded)
 }
 
 const ahmet = new Personel(101, 'Ahmet', 75000);
@@ -51,12 +51,12 @@ console.log(this); //! window objesine bağlanmıştır
 //* ---------------------------------------------------------
 
 const calisan = {
-    ad: 'Ahmet',
-    soyad: 'Yilmaz',
-    yas: 30,
-    is: 'developer',
-    diller: ['C', 'C++', 'Pyhton', 'JS'],
-    maas: 120000,
+  ad: 'Ahmet',
+  soyad: 'Yilmaz',
+  yas: 30,
+  is: 'developer',
+  diller: ['C', 'C++', 'Pyhton', 'JS'],
+  maas: 120000,
 };
 
 console.log(calisan);
@@ -79,21 +79,21 @@ console.log(isci, calisan);
 //* ======================================================
 
 const kisi = {
-    ad: 'Can',
-    soyad: 'Canan',
-    dogum: 1990,
-    meslek: 'developer',
-    ehliyet: true,
-    yasHesapla: function() {
-        return new Date().getFullYear() - this.dogum;
-    },
-    ozet: function() {
-        return `${this.ad}, ${this.yasHesapla()} yasindadir`;
-    },
-    // ozet: () => {
-    //   console.log(this);
-    //   return `${this.ad}, ${this.yasHesapla()} yasindadir`;
-    // },
+  ad: 'Can',
+  soyad: 'Canan',
+  dogum: 1990,
+  meslek: 'developer',
+  ehliyet: true,
+  yasHesapla: function () {
+    return new Date().getFullYear() - this.dogum;
+  },
+  ozet: function () {
+    return `${this.ad}, ${this.yasHesapla()} yasindadir`;
+  },
+  // ozet: () => {
+  //   console.log(this);
+  //   return `${this.ad}, ${this.yasHesapla()} yasindadir`;
+  // },
 };
 console.log(this);
 
@@ -114,59 +114,60 @@ console.log('BILGI:', kisi.ozet());
 
 //? Nested objects
 const kisilerObject = {
-    ahmet: {
-        ad: 'Ahmet',
-        soyad: 'Yilmaz',
-        yas: 30,
-        is: 'developer',
-        diller: ['C', 'C++', 'Pyhton', 'JS'],
-        maas: 120000,
-    },
-    mehmet: {
-        ad: 'Mehmet',
-        soyad: 'Yilmaz',
-        yas: 24,
-        is: 'developer',
-        diller: ['C', 'C++', 'Pyhton', 'JS'],
-        maas: 200000,
-    },
+  ahmet: {
+    ad: 'Ahmet',
+    soyad: 'Yilmaz',
+    yas: 30,
+    is: 'developer',
+    diller: ['C', 'C++', 'Pyhton', 'JS'],
+    maas: 120000,
+  },
+  mehmet: {
+    ad: 'Mehmet',
+    soyad: 'Yilmaz',
+    yas: 24,
+    is: 'developer',
+    diller: ['C', 'C++', 'Pyhton', 'JS'],
+    maas: 200000,
+  },
 };
 
 console.log(kisilerObject);
 console.log(kisilerObject.ahmet.is);
 
 //? JSON => javascript Object Notation
-const kisiler = [{
-        name: 'Ahmet',
-        surname: 'Can',
-        job: 'developer',
-        age: 30,
-    },
-    {
-        name: 'Mehmet',
-        surname: 'Baki',
-        job: 'tester',
-        age: 35,
-    },
-    {
-        name: 'Nur',
-        surname: 'Ersan',
-        job: 'team lead',
-        age: 40,
-    },
-    {
-        name: 'Merve',
-        surname: 'Veli',
-        job: 'developer',
-        age: 26,
-    },
+const kisiler = [
+  {
+    name: 'Ahmet',
+    surname: 'Can',
+    job: 'developer',
+    age: 30,
+  },
+  {
+    name: 'Mehmet',
+    surname: 'Baki',
+    job: 'tester',
+    age: 35,
+  },
+  {
+    name: 'Nur',
+    surname: 'Ersan',
+    job: 'team lead',
+    age: 40,
+  },
+  {
+    name: 'Merve',
+    surname: 'Veli',
+    job: 'developer',
+    age: 26,
+  },
 
-    {
-        name: 'Ruzgar',
-        surname: 'Kuzey',
-        job: 'tester',
-        age: 24,
-    },
+  {
+    name: 'Ruzgar',
+    surname: 'Kuzey',
+    job: 'tester',
+    age: 24,
+  },
 ];
 
 console.log(kisiler);
@@ -185,16 +186,16 @@ console.log(yaslar);
 //* arttırarak age key'ine saklayan ve oluşan diziyi döndüren kodu yazınız.
 
 const kisilerFullIsim = kisiler.map((kisi) => ({
-    fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
-    age: kisi.age + 5,
+  fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+  age: kisi.age + 5,
 }));
 
 //? Alternatif syntax
 const kisilerFullIsim1 = kisiler.map((kisi) => {
-    return {
-        fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
-        age: kisi.age + 5,
-    };
+  return {
+    fullname: kisi.name.toUpperCase() + ' ' + kisi.surname.toUpperCase(),
+    age: kisi.age + 5,
+  };
 });
 
 console.log(kisilerFullIsim);

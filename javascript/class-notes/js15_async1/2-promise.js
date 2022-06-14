@@ -29,3 +29,11 @@
 //! Bu durumlar then() ve catch() metotlari ile yakalanabilir.
 //? then() ve catch() metotlari promise dondururler.
 //? Zincirleme olarak kullanilabilirler.
+
+const myPromise=new Promise((resolve,reject)=>{
+    resolve('task performed successfuly');
+    reject(new Error('task failed') );
+} );
+
+myPromise.then((res)=>console.log(res)).catch((err)=>console.log(err);)
+; )

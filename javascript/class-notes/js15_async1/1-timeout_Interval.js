@@ -5,7 +5,7 @@
 //! Javascript, bir single-threaded ve Asenkron Programlama dilidir.
 
 //? Asenkron Programlama
-//? ---------------------------------------------------------------
+//? --------------------------------------------------------------
 //? Asenkron Programlama, bir alt gorevin uygulamanin asil thread'inden
 //? bagimsiz olarak arka planda calistirilmasina izin veren paralel programlama
 //? teknigidir. Bu alt gorev tamamlandiginda (basriyla veya basarisizlikla)
@@ -18,42 +18,51 @@
 
 //* Senkron
 //* ---------------------------------------------------------------
-const bekle=(ms)=>{
-    //! blocking-code
-    const start=new Date().getTime();2000
-    while(new Date().getTime()<start+ms );
-}
+// const bekle = (ms) => {
+//   //! blocking-code
+//   const start = new Date().getTime();
+//   while (new Date().getTime() < start + ms) {}
+// };
 
-console.log('TIMEOUT');
-console.log('hello');
-//alert("ıtf") //! blocking-code
-console.time('timer'); // ne kadar üsre kaybettiğini geçen süreyi gösterir
-bekle(1000);
-console.timeEnd('timer'); // ne kadar üsre kaybettiğini geçen süreyi gösterir
-console.log('FS11');
+// console.log('hello');
+// // alert('ITF'); //! blocking-code
+// console.time('timer');
+// bekle(3000);
+// console.timeEnd('timer');
+// console.log('FS11');
 
-//* Asenkron(setTimeout)
+//* Asenkron (setTimeout)
 //* ---------------------------------------------------------------
-// macro task kuruğu setTimeout macro olduğunu gösterir
-setTimeout(() => {
-    console.log("selam");
-});
-console.log("aleyküm");
-
-// micro task kuruğu
-console.log("selam");
-console.log("aleyküm");
-
-setTimeout(() => {
-    console.log("merhaba");
-},2000);
-console.log("dostum");
-
-//* Asenkron(setInterval,clearInterval )
-let counter=0;
-// setInterval(() => {
- //   console.log(++counter);
+// //! macro task kuyrugu
+// setTimeout(() => {
+//   //! non-blocking code
+//   console.log('Selamin Aleyküm');
 // }, 1000);
+
+// //! micro task kuyrugu
+// console.log('Aleyküm Selam');
+// console.log('Merhaba');
+
+// setTimeout(() => {
+//   //! non-blocking code
+//   console.log('Dostum naber?');
+// }, 500);
+
+//* Asenkron (setInterval, clearInterval)
+//*----------------------------------------------------------
+
+// console.log('Counter Started');
+// let counter = 0;
+
+// const sec1 = setInterval(() => {
+//   //!non-blocking
+//   console.log(++counter);
+//   if (counter > 9) {
+//     clearInterval(sec1);
+//   }
+// }, 1000);
+
+// console.log('Counter Finished');
 
 //! Callback Hell (nested ve birbirine bagli callback'ler)
 //!-----------------------------------------------------------------
@@ -62,13 +71,13 @@ let counter=0;
 // !callback hell olarak adlandirilan bu yapinin anlasilmasi ve surdurulebilirligi oldukca zordur.
 
 setTimeout(() => {
-  console.log("john:Hi");
+  console.log('john:Hi');
   setTimeout(() => {
-    console.log("Sarah: Hello");
+    console.log('Sarah: Hello');
     setTimeout(() => {
-      console.log("John: How Are you?");
+      console.log('John: How Are you?');
       setTimeout(() => {
-        console.log("Fine and you?");
+        console.log('Sarah:Fine and you?');
       }, 1000);
     }, 1000);
   }, 1000);
@@ -81,3 +90,4 @@ setTimeout(() => {
 //* 2- Promise,
 //! 3- Fetch API (Promise'in basitlestirilmis hali),
 //! 4- ASYNC-AWAIT (Fetch API'nin makyajlanmis hali)
+
